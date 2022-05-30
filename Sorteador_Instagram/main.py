@@ -36,15 +36,21 @@ login_button.click()
 sleep(3)
 button_info = driver.find_element_by_xpath('//*[@id="react-root"]/section/main/div/div/div/div/button')
 button_info.click()
+
+try:
+
+  btn_more_comments = driver.find_element_by_xpath('//*[@id="react-root"]/section/main/div/div[1]/article/div/div[2]/div/div[2]/div[1]/ul/li/div/button')
+  while btn_more_comments.is_displayed():
+
+    btn_more_comments.click()
+    sleep(4)
+
+    btn_more_comments = driver.find_element_by_xpath('//*[@id="react-root"]/section/main/div/div[1]/article/div/div[2]/div/div[2]/div[1]/ul/li/div/button')
  
-more_comments = driver.find_element_by_class('//*[@id="react-root"]/section/main/div/div[1]/article/div/div[2]/div/div[2]/div[1]/ul/li/div/button')
- 
-while more_comments.is_displayed() == True:
-  try:
-    more_comments.click()
-    sleep(10)
-  except:
-    continue
+except Exception as err_msg:
+  print(err_msg)
+  pass
+sleep(3)
       
 comments = driver.find_elements_by_class_name('gElp9')
   
