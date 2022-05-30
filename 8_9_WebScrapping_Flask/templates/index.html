@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Maratona News Popular</title>
+  <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+</head>
+
+<body>
+  
+  <header>
+    <h1>Hacker News Popular</h1>
+    <p>Ordenação:</p>
+    <div>
+      <a href="/">Popular</a>
+      <a href="/recent">Recente</a>
+    </div>
+  </header>
+
+  <main>
+      <div>
+        {% for i in list %}
+        <div>
+          <a href="/{{i.objectID}}">
+            <h3>({{i.title}})</h3>
+          </a>
+          <a href="{{i.url}}" target="_blank">{{i.url}}</a>
+        </div>
+        <div>
+           <table>
+             <th>{{i.points}} Points|</th>
+             <th>By: {{i.author}}|</th>
+             <th>{{i.num_comments}} comments</th>
+           </table>
+        </div>
+        {% endfor %}
+      </div>
+      <hr />
+  </main>
+  
+</body>
+</html>

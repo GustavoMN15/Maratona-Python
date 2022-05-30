@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Maratona News</title>
+  <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+</head>
+
+<body>
+   
+    <header>
+      <h1>{{comments.title}}</h1>
+      <div>
+        <table>
+             <th>{{comments.points}} Points    </th>
+             <th>By: {{comments.author}}    </th>
+             <th>{{comments.url}}</th>
+           </table>
+      </div>
+    </header>
+    {% for comment in comments.children %}
+    <main>
+        <div>          
+          <h3>{{comment.author}}</h3>
+          <p>{{comment.text | safe}} </p>
+        </div>
+        <hr />
+
+    </main>
+    {% endfor %}
+</body>
+</html>
