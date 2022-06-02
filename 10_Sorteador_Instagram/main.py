@@ -29,8 +29,8 @@ input_password = driver.find_element_by_xpath('//*[@id="loginForm"]/div/div[2]/d
 
 login_button = driver.find_element_by_xpath('//*[@id="loginForm"]/div/div[3]/button/div')
   
-input_username.send_keys("cromeremote@gmail.com")
-input_password.send_keys("@12345a")
+input_username.send_keys("email.com")
+input_password.send_keys("senha")
 login_button.click()
  
 sleep(3)
