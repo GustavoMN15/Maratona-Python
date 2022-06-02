@@ -6,13 +6,13 @@ from flask import Flask, render_template, request
 def send_sms(info,number):
   # autenticacao twilio
   # pegue suas credenciais: http://twil.io/secure
-  account_sid = 'AC1490a4fd1a22f1813983aa767f492fa3'
-  auth_token = 'f81a50fd6a1ebd6ea23fbe33096d1b42'
+  account_sid = ''
+  auth_token = ''
   client = Client(account_sid, auth_token)
   
   client.messages.create(
     to=f'+55{number}',
-    from_="+19286159803",
+    from_="number",
     body=f'{info[0]} \n {info[1]} \n {info[2]}')
 
 def rastreio(code,number):
