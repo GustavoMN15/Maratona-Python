@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rastreador correios</title>
+  <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+</head>
+
+<body>
+  <center>
+    <header>
+      <h1>Rstreador</h1>
+      <p>Digite o codigo e o numero para receber o SMS</p>
+    </header>
+    <main>
+        <form action="/result" method="get">
+          <input type="text" name="code" id="code" placeholder="Insira o codigo de rastreio" size="30" required>
+          <input type="number" name="number" id="number" placeholder="Insira o numero de elefone" size="30" required>
+          <button>Solicitar Status</button>
+        </form>
+    </main>
+  </center>
+</body>
+</html>
